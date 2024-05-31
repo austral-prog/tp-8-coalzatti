@@ -1,3 +1,5 @@
+    from sets_categories_data import ALCOHOLS 
+
 
 def clean_ingredients(dish_name, dish_ingredients):
     dish_ingr_set= set(dish_ingredients)
@@ -7,10 +9,7 @@ def clean_ingredients(dish_name, dish_ingredients):
 
 
 def check_drinks(drink_name, drink_ingredients):
-    alcohols = {"whiskey", "whisky", "white rum", "dark rum", "bourbon", "rye", "scotch", "vodka",
-            "tequila", "gin", "dry vermouth", "sweet vermouth", "prosecco","aperol", "brandy", "mezcal",
-            "triple sec", "coffee liqueur", "almond liqueur", "champagne", "orange curacao", "rum"}
-    if len(set(drink_ingredients.intersection(alcohols))) != 0:
+    if len(set(drink_ingredients.intersection(ALCOHOLS))) != 0:
         return f"{drink_name} Cocktail"
     else:
         return f"{drink_name} Mocktail"
